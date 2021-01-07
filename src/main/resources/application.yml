@@ -1,0 +1,26 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+      url: jdbc:mysql://yl.fhxynet.com:3306/fund?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2b8
+      username: root
+      password: root_123456
+      driver-class-name: com.mysql.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    #字段如果为空 在更新时不更改相应字段值
+    global-config:
+      field-strategy: 1
+    #打印sql语句
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+
+##是否开启 swagger-ui
+swagger:
+  enabled: true
